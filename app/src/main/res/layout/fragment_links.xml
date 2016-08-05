@@ -1,0 +1,45 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yes.youthexploringscience.fragments.LinksFragment">
+
+    <ImageView
+        android:id="@+id/ivPaylocity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/paylocity_button_unselected"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="40dp" />
+
+    <ImageView
+        android:id="@+id/ivSLSCWebsite"
+        android:layout_width="290dp"
+        android:layout_height="70dp"
+        android:src="@drawable/slscwebsite_btn_unselected"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="40dp" />
+
+    <ImageView
+        android:id="@+id/ivStudents"
+        android:layout_width="290dp"
+        android:layout_height="70dp"
+        android:src="@drawable/students_btn_unselected"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="40dp" />
+
+    <ImageView
+        android:id="@+id/ivYESWebsite"
+        android:layout_width="290dp"
+        android:layout_height="70dp"
+        android:src="@drawable/yeswebsite_btn_unselected"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="40dp" />
+
+</LinearLayout>

@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
 import com.yes.youthexploringscience.R;
 import com.yes.youthexploringscience.contacts.Contact;
 
@@ -35,6 +36,9 @@ public class ContactDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        Toast.makeText(this, contact.toString(),
+                Toast.LENGTH_LONG).show();
+
         setupContactView();
     }
 
@@ -47,15 +51,16 @@ public class ContactDetailActivity extends AppCompatActivity {
         ImageView ivEmail = (ImageView) findViewById(R.id.ivDetailEmail);
 
         tvName.setText(contact.getFullName());
-        tvPhone.setText(contact.getPhone());
+        tvPhone.setText(contact.getFormattedPhone());
         tvEmail.setText(contact.getEmail());
+        Picasso.with(this).load("http://www.clker.com/cliparts/5/9/4/c/12198090531909861341man%20silhouette.svg.med.png").into(ivIcon);
 
         ivPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:" + "3146469822"));
+                callIntent.setData(Uri.parse("tel:" + contact.getPhone()));
 //                callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(callIntent);
 
@@ -67,11 +72,12 @@ public class ContactDetailActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent emailIntent = new Intent(Intent.ACTION_VIEW);
-                emailIntent.setData(Uri.parse("mailto:" + "danieljdrapp@gmail.com"));
+                emailIntent.setData(Uri.parse("mailto:" + contact.getEmail()));
                 startActivity(emailIntent);
 
             }
         });
+
     }
 
 }

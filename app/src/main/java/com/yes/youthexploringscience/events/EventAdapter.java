@@ -2,6 +2,7 @@ package com.yes.youthexploringscience.events;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +54,12 @@ public class EventAdapter extends ArrayAdapter {
 
         holder.title.setText(eventsList.get(position).getSummary());
         holder.title.setTextColor(Color.BLACK);
-        holder.subtitle.setText(eventsList.get(position).getDescription());
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            holder.subtitle.setText(Html.fromHtml(eventsList.get(position).getDescription(), Html.FROM_HTML_MODE_LEGACY));
+        } else {
+            holder.subtitle.setText(Html.fromHtml(eventsList.get(position).getDescription()));
+        }
         holder.subtitle.setTextColor(Color.BLACK);
         holder.start.setText("Start: " + eventsList.get(position).getStart().getFormattedDate());
         holder.start.setTextColor(Color.BLACK);

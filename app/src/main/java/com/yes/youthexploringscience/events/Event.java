@@ -41,6 +41,14 @@ public class Event implements Comparable<Event>, Serializable {
         location = in.readString();
     }
 
+    public ArrayList<String> getAttachmentLinks() {
+        ArrayList<String> links = new ArrayList<>();
+        for (Attachment att : attachments) {
+            links.add(att.getFileUrl());
+        }
+        return links;
+    }
+
     public String getHtmlLink() {
         return htmlLink;
     }
@@ -136,7 +144,7 @@ public class Event implements Comparable<Event>, Serializable {
 
     @Override
     public int compareTo(Event event) {
-        int compareInt = this.start.getFormattedDate().compareTo(event.getStart().getFormattedDate());
+        int compareInt = this.start.getCompare().compareTo(event.getStart().getCompare());
         if (compareInt < 0)
             return -1;
         else if (compareInt > 0)

@@ -41,4 +41,7 @@ dependencies {
     // Gson
     compile group: 'com.google.code.gson', name: 'gson', version: '2.4'
 
+    // Picasso
+    compile "com.squareup.picasso:picasso:2.4.0"
+
 }

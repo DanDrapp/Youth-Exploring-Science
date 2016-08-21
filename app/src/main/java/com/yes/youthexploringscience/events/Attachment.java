@@ -16,6 +16,14 @@ public class Attachment implements Serializable {
         this.iconLink = iconLink;
     }
 
+    public String getFileUrl() {
+        return fileUrl;
+    }
+
+    public void setFileUrl(String fileUrl) {
+        this.fileUrl = fileUrl;
+    }
+
     @Override
     public String toString() {
         return "\"fileUrl\": \"" + fileUrl + "\"\n\t\t\t\t\"title\": \"" + title +

@@ -49,6 +49,15 @@ public class Contact implements Serializable {
         return phone;
     }
 
+    public String getFormattedPhone() {
+        if (phone.length() == 10)
+            return String.format("(%s) %s-%s", phone.substring(0, 3), phone.substring(3, 6), phone.substring(6,phone.length()));
+        else if (phone.length() == 7)
+            return String.format("%s-%s", phone.substring(0, 3), phone.substring(3, phone.length()));
+        else
+            return phone;
+    }
+
     @Override
     public String toString() {
         return "Name: " + firstName + " " + lastName + " Email: " + email + " Phone: " + phone + " Image: " + icon + "\n";

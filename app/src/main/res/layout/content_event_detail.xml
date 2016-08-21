@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,38 +13,37 @@
     tools:context="com.yes.youthexploringscience.activities.EventDetailActivity"
     tools:showIn="@layout/activity_event_detail">
 
+    <TextView
+        android:id="@+id/tvDetailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:paddingBottom="10dp"/>
+
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDetailTitle"
+        android:layout_above="@+id/addButtonLayout">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvDetailTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@+id/tvDeatilLocationLabel"
-                android:layout_alignParentTop="true"
-                android:text="Title"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
                 android:id="@+id/tvDeatilLocationLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/tvDetailTitle"
-                android:text="Location"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:text="@string/location"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorPrimary"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Actual Location"
                 android:id="@+id/tvDetailLocation" />
 
             <LinearLayout
@@ -56,14 +55,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Start"
-                    android:id="@+id/tvDetailStartLabel" />
+                    android:text="@string/start"
+                    android:id="@+id/tvDetailStartLabel"
+                    android:textColor="@color/colorPrimary"
+                    android:paddingTop="10dp"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Start Time"
+                    android:gravity="end"
+                    android:textStyle="bold"
                     android:id="@+id/tvDetailStart" />
             </LinearLayout>
 
@@ -76,14 +78,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="End"
-                    android:id="@+id/tvDetailEndLabel" />
+                    android:text="@string/end"
+                    android:id="@+id/tvDetailEndLabel"
+                    android:textColor="@color/colorPrimary"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="End Time"
+                    android:gravity="end"
+                    android:textStyle="bold"
                     android:id="@+id/tvDetailEnd" />
             </LinearLayout>
 
@@ -91,21 +95,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Description"
-                android:id="@+id/tvDetailDescriptionLabel" />
+                android:text="@string/description"
+                android:id="@+id/tvDetailDescriptionLabel"
+                android:textColor="@color/colorPrimary"
+                android:paddingTop="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Actual Description"
                 android:id="@+id/tvDetailDescription" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Attachments"
+                android:text="@string/attachments"
+                android:textColor="@color/colorPrimary"
                 android:id="@+id/tvDetailAttachmentsLabel" />
 
             <ListView
@@ -117,4 +123,23 @@
 
     </ScrollView>
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/addButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="10dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/htmlLink"
+            android:text="@string/addEvent"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/textColorPrimary"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

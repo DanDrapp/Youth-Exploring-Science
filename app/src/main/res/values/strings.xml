@@ -18,4 +18,13 @@
     <string name="connection_contact_fail">Unable to retrieve contacts.</string>
     <string name="title_activity_contact_detail">ContactDetailActivity</string>
     <string name="title_activity_event_detail">EventDetailActivity</string>
+
+    <!-- Event Details -->
+    <string name="addEvent">Add Event</string>
+    <string name="start">Start:</string>
+    <string name="end">End:</string>
+    <string name="description">Description</string>
+    <string name="location">Location</string>
+    <string name="attachments">Attachments</string>
+
 </resources>

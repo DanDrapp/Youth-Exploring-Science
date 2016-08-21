@@ -1,13 +1,16 @@
 package com.yes.youthexploringscience.contacts;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
 import com.yes.youthexploringscience.R;
 
 import java.util.ArrayList;
@@ -44,7 +47,11 @@ public class ContactAdapter extends BaseAdapter {
             textView.setText(contacts.get(position).getFullName());
 
             ImageView imageView = (ImageView) gridView.findViewById(R.id.image);
-            imageView.setImageResource(R.drawable.head);
+//            if (contacts.get(position).getIcon() != null)
+                Picasso.with(context).load("http://www.clker.com/cliparts/5/9/4/c/12198090531909861341man%20silhouette.svg.med.png").into(imageView);
+//            else
+//                imageView.setImageResource(R.drawable.head);
+
 
         } else {
             gridView = (View) convertView;

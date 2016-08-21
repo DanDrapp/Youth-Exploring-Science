@@ -28,7 +28,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:id="@+id/ivDetailIcon"
-                android:src="@drawable/head"/>
+                android:src="@drawable/head"
+                android:padding="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -51,35 +52,50 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Phone:"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
                 android:id="@+id/textView2" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="(314) 646-9822"
+                    android:layout_alignParentStart="true"
                     android:id="@+id/tvDetailPhone" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/ivDetailPhone"
-                    android:src="@android:drawable/sym_action_call" />
-            </LinearLayout>
+                    android:src="@android:drawable/sym_action_call"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="15dp"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:background="@color/textPrimaryDarkTransparent"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
                 android:text="Email:"
-                android:id="@+id/textView4"/>
+                android:id="@+id/textView4"
+                android:paddingTop="10dp"/>
 
-            <LinearLayout
+            <RelativeLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -89,14 +105,17 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="testemail@email.com"
-                    android:id="@+id/tvDetailEmail" />
+                    android:id="@+id/tvDetailEmail"
+                    android:layout_alignParentStart="true"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/ivDetailEmail"
-                    android:src="@android:drawable/sym_action_email"/>
-            </LinearLayout>
+                    android:src="@android:drawable/sym_action_email"
+                    android:layout_alignParentEnd="true"
+                    android:paddingEnd="15dp"/>
+            </RelativeLayout>
         </LinearLayout>
 
     </LinearLayout>

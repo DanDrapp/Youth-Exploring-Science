@@ -53,7 +53,6 @@ public class ContactsFragment extends Fragment {
     private void setGridItemClickListener(GridView gridView) {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Toast.makeText(getContext(), contacts.get(position).toString() ,Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(), ContactDetailActivity.class);
                 intent.putExtra("CONTACT", contacts.get(position));
                 startActivity(intent);

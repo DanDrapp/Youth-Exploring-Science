@@ -52,7 +52,10 @@ public class EventAdapter extends ArrayAdapter {
 
 
 
-        holder.title.setText(eventsList.get(position).getSummary());
+        if (eventsList.get(position).getSummary().equals(""))
+            holder.title.setText("No Title");
+        else
+            holder.title.setText(eventsList.get(position).getSummary());
         holder.title.setTextColor(Color.BLACK);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -61,9 +64,9 @@ public class EventAdapter extends ArrayAdapter {
             holder.subtitle.setText(Html.fromHtml(eventsList.get(position).getDescription()));
         }
         holder.subtitle.setTextColor(Color.BLACK);
-        holder.start.setText("Start: " + eventsList.get(position).getStart().getFormattedDate());
+        holder.start.setText(eventsList.get(position).getStart().getFormattedDate());
         holder.start.setTextColor(Color.BLACK);
-        holder.end.setText("End: " + eventsList.get(position).getEnd().getFormattedDate());
+        holder.end.setText(eventsList.get(position).getEnd().getFormattedDate());
         holder.end.setTextColor(Color.BLACK);
 
         return convertView;

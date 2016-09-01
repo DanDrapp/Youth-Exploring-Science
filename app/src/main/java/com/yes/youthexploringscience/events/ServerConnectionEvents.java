@@ -2,7 +2,9 @@ package com.yes.youthexploringscience.events;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.yes.youthexploringscience.R;
 import com.yes.youthexploringscience.fragments.CalendarFragment;
@@ -28,10 +30,12 @@ public class ServerConnectionEvents extends AsyncTask<String, Void, List<Event>>
 
     private Context context;
     private ListView lvEvents;
+    private TextView tvNoEvents;
 
-    public ServerConnectionEvents(Context context, ListView lvEvents, List<Event> events) {
+    public ServerConnectionEvents(Context context, ListView lvEvents, List<Event> events, TextView tvNoEvents) {
         this.context = context;
         this.lvEvents = lvEvents;
+        this.tvNoEvents = tvNoEvents;
     }
 
     @Override
@@ -58,6 +62,12 @@ public class ServerConnectionEvents extends AsyncTask<String, Void, List<Event>>
         Collections.sort(events);
 
         CalendarFragment.events = events;
+
+        if (events.size() == 0 && tvNoEvents != null)
+            tvNoEvents.setVisibility(View.VISIBLE);
+        else if (events.size() != 0 && tvNoEvents != null)
+            tvNoEvents.setVisibility(View.INVISIBLE);
+
         EventAdapter eventAdapter = new EventAdapter(context, R.layout.row, events);
         lvEvents.setAdapter(eventAdapter);
     }

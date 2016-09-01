@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.yes.youthexploringscience.R;
 import com.yes.youthexploringscience.activities.EventDetailActivity;
@@ -23,6 +24,7 @@ public class CalendarFragment extends Fragment {
     private int url = R.string.server_fetch_events_localhost;
     private ListView lvEvents;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private TextView tvNoEvents;
     public static List<Event> events = new ArrayList<>();
 
     public CalendarFragment() {
@@ -39,6 +41,7 @@ public class CalendarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_calendar, container, false);
 
+        tvNoEvents = (TextView) view.findViewById(R.id.tvNoEvents);
         lvEvents = (ListView) view.findViewById(R.id.lvEvents);
         setListItemClickListener(lvEvents);
 
@@ -51,7 +54,7 @@ public class CalendarFragment extends Fragment {
     }
 
     private void fetchEvents(String url) {
-        new ServerConnectionEvents(getContext(), lvEvents, events).execute(url);
+        new ServerConnectionEvents(getContext(), lvEvents, events, tvNoEvents).execute(url);
     }
 
     private void setListItemClickListener(ListView lvEvents) {
@@ -72,7 +75,7 @@ public class CalendarFragment extends Fragment {
             @Override
             public void onRefresh() {
                 events.clear();
-                new ServerConnectionEvents(getContext(), lvEvents, events).execute(url);
+                new ServerConnectionEvents(getContext(), lvEvents, events, tvNoEvents).execute(url);
                 swipeRefreshLayout.setRefreshing(false);
             }
         });

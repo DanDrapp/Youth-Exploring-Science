@@ -1,7 +1,13 @@
 package com.yes.youthexploringscience.events;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Dan on 8/1/2016.
@@ -29,6 +35,23 @@ public class End implements Serializable {
     }
 
     public String getTimeInMilliseconds() {
+//        try {
+//            Calendar calendar = Calendar.getInstance();
+//            if (dateTime.equals("")) {
+//                SimpleDateFormat format = new SimpleDateFormat();
+//                Date currentDate =  format.parse(date);
+//                calendar.setTime(currentDate);
+//            } else {
+//                SimpleDateFormat format = new SimpleDateFormat();
+//                Date currentDate = format.parse(dateTime);
+//                calendar.setTime(currentDate);
+//            }
+//
+//            return calendar.getTimeInMillis() + "";
+//
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
         return "";
     }
 

@@ -37,7 +37,7 @@ public class MainTabActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter((getSupportFragmentManager()));
-        adapter.addFragment(new LinksFragment(), "Links");
+        adapter.addFragment(new LinksFragment(), "Home");
         adapter.addFragment(new CalendarFragment(), "Calendar");
         adapter.addFragment(new ContactsFragment(), "Contacts");
         viewPager.setAdapter(adapter);

@@ -3,21 +3,24 @@
 
     <!-- Server Links -->
     <string name="server_fetch_contact_emulator">http://10.0.2.2/scripts/fetch_contacts.php</string>
-    <string name="server_fetch_contact_localhost">http://192.168.1.2/scripts/fetch_contacts.php</string>
+    <string name="server_fetch_contact_localhost">http://192.168.1.3/scripts/fetch_contacts.php</string>
+    <string name="server_fetch_contact_wicked_fury">http://www.wicked-fury.com/dan/fetch_contacts.php</string>
 
     <string name="server_fetch_events_emulator">http://10.0.2.2/scripts/fetch_events.php</string>
-    <string name="server_fetch_events_localhost">http://192.168.1.2/scripts/fetch_events.php</string>
+    <string name="server_fetch_events_localhost">http://192.168.1.3/scripts/fetch_events.php</string>
+    <string name="server_fetch_events_wicked_fury">http://www.wicked-fury.com/dan/fetch_events.php</string>
 
     <!-- Links-->
-    <string name="link_paylocity">http://www.paylocity.com/</string>
+    <string name="link_paylocity">https://login.paylocity.com/Escher/Escher_WebUI/views/login/login.aspx</string>
     <string name="link_yes_website">http://www.youthexploringscience.com/</string>
     <string name="link_slsc_website">http://www.slsc.org/</string>
-    <string name="link_students">https://www.google.com/</string>
+    <string name="link_students">http://www.youthexploringscience.com/#!resources/obnhz</string>
 
     <!-- Messages -->
     <string name="connection_contact_fail">Unable to retrieve contacts.</string>
     <string name="title_activity_contact_detail">ContactDetailActivity</string>
     <string name="title_activity_event_detail">EventDetailActivity</string>
+    <string name="empty_events_list">"No Scheduled Events</string>
 
     <!-- Event Details -->
     <string name="addEvent">Add Event</string>

@@ -11,7 +11,7 @@ public class Contact implements Serializable {
     private String lastName;
     private String email;
     private String phone;
-    private String icon;
+    private String image;
 
     public Contact() {
 
@@ -22,7 +22,7 @@ public class Contact implements Serializable {
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
-        this.icon = icon;
+        this.image = icon;
     }
 
     public String getFullName() {
@@ -41,8 +41,8 @@ public class Contact implements Serializable {
         return lastName;
     }
 
-    public String getIcon() {
-        return icon;
+    public String getImage() {
+        return image;
     }
 
     public String getPhone() {
@@ -60,7 +60,7 @@ public class Contact implements Serializable {
 
     @Override
     public String toString() {
-        return "Name: " + firstName + " " + lastName + " Email: " + email + " Phone: " + phone + " Image: " + icon + "\n";
+        return "Name: " + firstName + " " + lastName + " Email: " + email + " Phone: " + phone + " Image: " + image + "\n";
     }
 
 }

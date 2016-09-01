@@ -32,12 +32,10 @@ public class ContactDetailActivity extends AppCompatActivity {
         contact = (Contact) getIntent().getSerializableExtra("CONTACT");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(contact.getFullName());
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        Toast.makeText(this, contact.toString(),
-                Toast.LENGTH_LONG).show();
 
         setupContactView();
     }
@@ -53,7 +51,7 @@ public class ContactDetailActivity extends AppCompatActivity {
         tvName.setText(contact.getFullName());
         tvPhone.setText(contact.getFormattedPhone());
         tvEmail.setText(contact.getEmail());
-        Picasso.with(this).load("http://www.clker.com/cliparts/5/9/4/c/12198090531909861341man%20silhouette.svg.med.png").into(ivIcon);
+        Picasso.with(this).load(contact.getImage()).into(ivIcon);
 
         ivPhone.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +59,6 @@ public class ContactDetailActivity extends AppCompatActivity {
 
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
                 callIntent.setData(Uri.parse("tel:" + contact.getPhone()));
-//                callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(callIntent);
 
             }
